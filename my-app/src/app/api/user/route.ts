@@ -34,10 +34,10 @@ export async function GET(request: NextRequest) {
       where.teamId = teamId;
     }
 
-    if (role && Object.values(Role).includes(role as Role)) {
-      where.role = role as Role;
+    if (role) {
+      where.role = role.toUpperCase() as Role;
     }
-
+    console.log(where);
 
     const allUsers = await prisma.user.findMany({
       where,
