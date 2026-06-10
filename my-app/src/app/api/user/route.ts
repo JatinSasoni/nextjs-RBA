@@ -38,7 +38,6 @@ export async function GET(request: NextRequest) {
       where.role = role as Role;
     }
 
-    console.log(where);
 
     const allUsers = await prisma.user.findMany({
       where,

@@ -20,6 +20,7 @@
 # production
 /build
 
+/NextJS Practice
 # misc
 .DS_Store
 *.pem
