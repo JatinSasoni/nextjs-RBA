@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 const API_BASE_URL = process.env.NEXT_BASE_URL || "http://localhost:3000";
 
 class ApiClient {
