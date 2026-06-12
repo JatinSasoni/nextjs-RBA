@@ -8,7 +8,7 @@ class ApiClient {
   }
 
   async request(endpoint: string, options: RequestInit = {}) {
-    const url = `${this.baseUrl}%{endpoint}`;
+    const url = `${this.baseUrl}${endpoint}`;
 
     const config: RequestInit = {
       headers: {
@@ -31,13 +31,15 @@ class ApiClient {
 
       throw new Error(error.error || "Request Failed");
     }
+
+    return response.json();
   }
 
   //auth methods
   async register(userData: unknown) {
     return this.request("/api/auth/register", {
       method: "POST",
-      body: JSON.stringify({ userData }),
+      body: JSON.stringify(userData),
     });
   }
 

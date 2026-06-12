@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
           error: "Invalid credentials",
         },
         {
-          status: 401,
+          status: 400,
         }
       );
     }

@@ -15,8 +15,6 @@ export default function Header({ user }: HeaderProps) {
     { name: "Dashboard", href: "/dashboard", show: true },
   ].filter((item) => item.show);
 
-  const user2 = false;
-
   const getNavItemClass = (href: string) => {
     let isActive = false;
     if (href == "/") {
@@ -52,7 +50,7 @@ export default function Header({ user }: HeaderProps) {
           </nav>
           {/* User info  */}
           <div className="flex items-center space-x-4">
-            {user2 ? (
+            {user ? (
               <>
                 <span className="text-sm text-slate-300">Dipesh User</span>
                 <button

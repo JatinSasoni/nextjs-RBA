@@ -39,7 +39,7 @@ const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
         console.log("Error while login", error);
         return {
           success: false,
-          error: "Login failed",
+          error: error instanceof Error ? error.message : "Login Failed",
           user: null,
         };
       }
